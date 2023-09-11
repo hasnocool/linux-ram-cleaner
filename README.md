@@ -11,9 +11,9 @@ This Bash script is designed to clear various types of caches in a Linux system 
 ## Installation
 1. Download the script and save it as `memory_cleanup.sh`.
 2. Make the script executable:
-   ```bash
-   chmod +x memory_cleanup.sh
-   ```
+```bash
+chmod +x memory_cleanup.sh
+```
 Usage
 Run the script with root privileges:
 
