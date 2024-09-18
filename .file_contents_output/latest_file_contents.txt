@@ -1,0 +1,25 @@
+
+========================================
+File: /home/hasnocool/Github/active/linux-ram-cleaner/memory_cleanup.sh
+========================================
+#!/bin/bash
+
+# Display current memory usage
+echo "Before:"
+free -h
+
+# Clear PageCache only
+sync; echo 1 > /proc/sys/vm/drop_caches
+
+# Clear dentries and inodes
+sync; echo 2 > /proc/sys/vm/drop_caches
+
+# Clear PageCache, dentries, and inodes
+sync; echo 3 > /proc/sys/vm/drop_caches
+
+# Disable and re-enable swap to clear it as well (requires root)
+swapoff -a && swapon -a
+
+# Display memory usage after cleanup
+echo "After:"
+free -h
